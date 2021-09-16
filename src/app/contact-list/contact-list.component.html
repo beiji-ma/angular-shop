@@ -1,0 +1,42 @@
+<h2 class="sub-header">我的联系人</h2>
+<div class="table-responsive">
+  <!-- Single Button -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-info dropdown-toggle">
+      所有<span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">朋友</a></li>
+      <li><a href="#">家人</a></li>
+      <li><a href="#">公司</a></li>
+      <li><a href="#">同学</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+    <a routerLink="/contacts/new" class="btn btn-success pull-right" data-toggle="dropdown-toggle">新增联系人</a>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>名称</th>
+          <th>作者</th>
+          <th>描述</th>
+          <th>分类</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let item of contacts; let key = index">
+        <td>{{ key + 1 }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.author}}</td>
+        <td>{{ item.description}}</td>
+        <td>
+          <span class="lable label-success">{{ item.category }}</span>
+        </td>
+        <td>
+          <a href="edit.html">编辑</a>
+          <a href="#">删除</a>
+        </td>
+    </table>
+  </div>
+</div>
